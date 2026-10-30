@@ -74,7 +74,7 @@ h2 em {
 }
 
 h2 {
-  font-size: clamp(2.8rem, 5vw, 5rem);
+  font-size: clamp(2.3rem, 3.8vw, 3.8rem);
 }
 
 .script {
