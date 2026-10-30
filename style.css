@@ -504,7 +504,7 @@ h2 {
 }
 
 .contact-section > p:not(.eyebrow) {
-  max-width: 500px;
+  max-width: 300px;
   margin: 0 auto 30px;
   color: #E1E7DD;
 }
@@ -704,3 +704,22 @@ h2 {
   }
 }
 
+@media (max-width: 800px) {
+  .about-layout {
+    grid-template-columns: 300px 1fr;
+    gap: 55px;
+  }
+
+  .about-image {
+    max-width: 300px;
+    margin: 0 auto;
+  }
+
+  .about-image img {
+    height: 380px;
+  }
+
+  .about-content {
+    max-width: 100%;
+  }
+}
