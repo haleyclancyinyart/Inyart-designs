@@ -587,6 +587,150 @@ h2 {
   height: auto;
   object-fit: contain;
 }
+/* ==================================
+   REFINED TYPOGRAPHY & SPACING
+   INYART DESIGNS
+================================== */
+
+/* GENERAL SECTION HEADINGS */
+
+h2 {
+  font-size: clamp(2rem, 3vw, 3.2rem);
+  line-height: 1.2;
+}
+
+/* HOMEPAGE MAIN HEADING */
+
+.hero h1 {
+  font-size: clamp(2.4rem, 3.2vw, 3.4rem);
+  line-height: 1.2;
+  max-width: 650px;
+}
+
+/* HOMEPAGE HANDWRITTEN ACCENT */
+
+.handwritten-note {
+  font-size: 1.5rem;
+}
+
+/* HOMEPAGE DESCRIPTION */
+
+.hero-description {
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+
+/* GREEN INTRO SECTION */
+
+.intro-strip {
+  padding: 65px 15%;
+}
+
+.intro-strip p {
+  font-size: clamp(1.4rem, 2.2vw, 2.2rem);
+  line-height: 1.5;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.intro-strip .script {
+  font-size: 1.25em;
+}
+
+/* SELECTED WORK & SERVICES */
+
+.section-heading h2 {
+  font-size: clamp(2rem, 3vw, 3.2rem);
+}
+
+.section-heading {
+  margin-bottom: 35px;
+}
+
+/* SERVICE CARD HEADINGS */
+
+.service h3 {
+  font-size: 1.7rem;
+}
+
+.service p {
+  font-size: 0.9rem;
+}
+
+.service li {
+  font-size: 0.85rem;
+}
+
+/* ABOUT SECTION */
+
+.about-content h2 {
+  font-size: clamp(2rem, 3vw, 3.2rem);
+}
+
+.about-content p:not(.eyebrow) {
+  font-size: 0.95rem;
+}
+
+/* CONTACT SECTION */
+
+.contact-section h2 {
+  font-size: clamp(2.2rem, 3.5vw, 3.8rem);
+  line-height: 1.25;
+}
+
+.contact-section > p:not(.eyebrow) {
+  font-size: 0.95rem;
+}
+
+.contact-handwritten {
+  font-size: 1.5rem;
+}
+
+/* SMALL SECTION LABELS */
+
+.eyebrow {
+  font-size: 0.68rem;
+  letter-spacing: 0.14em;
+}
+
+/* LESS EMPTY SPACE BETWEEN SECTIONS */
+
+.section {
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+
+.contact-section {
+  padding-top: 85px;
+  padding-bottom: 85px;
+}
+
+/* MOBILE ADJUSTMENTS */
+
+@media (max-width: 650px) {
+
+  .hero h1 {
+    font-size: clamp(2rem, 7vw, 2.5rem);
+  }
+
+  h2,
+  .section-heading h2,
+  .about-content h2 {
+    font-size: clamp(1.9rem, 7vw, 2.4rem);
+  }
+
+  .intro-strip p {
+    font-size: 1.45rem;
+  }
+
+  .contact-section h2 {
+    font-size: clamp(2rem, 7vw, 2.6rem);
+  }
+
+  .section {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
 
 /* MOBILE */
 @media (max-width: 650px) {
