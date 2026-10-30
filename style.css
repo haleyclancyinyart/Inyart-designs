@@ -574,7 +574,7 @@ h2 {
 /* HEADER LOGO */
 .brand-logo {
   display: block;
-  width: 120px;
+  width: 150px;
   height: auto;
   object-fit: contain;
 }
@@ -582,7 +582,7 @@ h2 {
 /* FOOTER LOGO */
 .footer-logo {
   display: block;
-  width: 120px;
+  width: 150px;
   height: auto;
   object-fit: contain;
 }
