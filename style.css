@@ -432,30 +432,40 @@ h2 {
 
 .about-layout {
   display: grid;
-  grid-template-columns: 0.9fr 1.1fr;
-  gap: 10%;
+  grid-template-columns: 350px 1fr;
+  gap: 80px;
   align-items: center;
+  max-width: 1150px;
+  margin: 0 auto;
 }
 
 .about-image {
   position: relative;
+  width: 100%;
+  max-width: 350px;
 }
 
 .about-image img {
   width: 100%;
-  aspect-ratio: 4 / 5;
+  height: 440px;
   object-fit: cover;
+  object-position: center;
+  border-radius: 50% / 40%;
   background: var(--ivory);
 }
 
 .image-note {
   position: absolute;
   bottom: -25px;
-  right: -20px;
+  right: -15px;
   color: var(--terracotta);
   font-family: "Caveat", cursive;
   font-size: 2rem;
   transform: rotate(-7deg);
+}
+
+.about-content {
+  max-width: 650px;
 }
 
 .about-content h2 {
