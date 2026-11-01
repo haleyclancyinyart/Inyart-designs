@@ -390,32 +390,42 @@ h2 em {
    09. SELECTED WORK PORTFOLIO
 ========================================== */
 
-.work-section {
-  background: var(--cream);
-  padding: 80px 7%;
-}
-
-.work-container {
-  max-width: 1200px;
-  margin: 0 auto;
-}
+/* FIX SELECTED WORK HEADING */
 
 .work-section .section-heading {
-  margin-bottom: 60px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 35px;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto 50px;
+}
+
+.work-section .section-heading > * {
+  min-width: 0;
 }
 
 .work-section .section-heading h2 {
-  font-size: clamp(2rem, 3vw, 3.2rem);
-  margin: 12px 0 20px;
+  font-size: clamp(2rem, 3vw, 3rem);
 }
 
-.work-intro {
-  font-size: 0.95rem;
-  line-height: 1.7;
-  color: var(--muted);
-  max-width: 520px;
+.work-section .section-description {
+  max-width: 350px;
+  flex-shrink: 1;
+  overflow-wrap: break-word;
 }
 
+@media (max-width: 700px) {
+  .work-section .section-heading {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .work-section .section-description {
+    max-width: 100%;
+  }
+}
 
 /* ==========================================
    10. PORTFOLIO CATEGORIES
