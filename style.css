@@ -326,10 +326,16 @@ h2 em {
    07. GREEN INTRO STRIP
 ========================================== */
 
+/* ==========================================
+   07. GREEN INTRO STRIP
+========================================== */
+
 .intro-strip {
   background: var(--olive);
-  padding: 65px 15%;
+  padding: 65px 7%;
   text-align: center;
+  width: 100%;
+  overflow: hidden;
 }
 
 .intro-strip p {
@@ -337,14 +343,17 @@ h2 em {
   font-size: clamp(1.4rem, 2.2vw, 2.2rem);
   line-height: 1.5;
   color: var(--cream);
-  max-width: 900px;
+  max-width: 850px;
   margin: 0 auto;
+  white-space: normal;
+  overflow-wrap: break-word;
 }
 
 .intro-strip .script {
+  font-family: "Caveat", cursive;
+  font-size: 1.15em;
   color: #E6B1A4;
-  font-size: 1.25em;
-  white-space: nowrap;
+  white-space: normal;
 }
 
 
