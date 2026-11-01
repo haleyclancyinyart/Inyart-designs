@@ -544,6 +544,33 @@ h2 em {
 }
 
 
+/* LOGO IMAGE FRAME */
+
+.logo-image-frame {
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+  border-radius: 20px;
+  background: #f3efe7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo-image-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 20px;
+  padding: 0;
+}
+
+@media (max-width: 700px) {
+  .logo-image-frame {
+    height: 240px;
+  }
+}
+
 /* ==========================================
    13. PORTFOLIO LINKS & BUTTONS
 ========================================== */
