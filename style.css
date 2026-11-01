@@ -1,8 +1,14 @@
 
-/* ==============================
+/* ==========================================
    INYART DESIGNS
    CLEAN + ORGANIC WEBSITE
-================================ */
+   COMPLETE STYLESHEET
+========================================== */
+
+
+/* ==========================================
+   01. COLORS & VARIABLES
+========================================== */
 
 :root {
   --cream: #FAF9F5;
@@ -16,7 +22,10 @@
   --white: #FFFFFF;
 }
 
-/* RESET */
+
+/* ==========================================
+   02. RESET & GLOBAL STYLES
+========================================== */
 
 * {
   box-sizing: border-box;
@@ -32,6 +41,7 @@ body {
   color: var(--charcoal);
   font-family: "DM Sans", sans-serif;
   line-height: 1.7;
+  overflow-x: hidden;
 }
 
 img {
@@ -40,8 +50,8 @@ img {
 }
 
 a {
-  text-decoration: none;
   color: inherit;
+  text-decoration: none;
 }
 
 button,
@@ -54,17 +64,28 @@ a {
   color: white;
 }
 
-/* TYPOGRAPHY */
 
-h1, h2, h3, p {
+/* ==========================================
+   03. TYPOGRAPHY
+========================================== */
+
+h1,
+h2,
+h3,
+p {
   margin-top: 0;
 }
 
-h1, h2 {
+h1,
+h2 {
   font-family: "DM Serif Display", serif;
   font-weight: 400;
-  line-height: 1.12;
-  letter-spacing: -0.035em;
+  line-height: 1.2;
+  letter-spacing: -0.03em;
+}
+
+h2 {
+  font-size: clamp(2rem, 3vw, 3.2rem);
 }
 
 h1 em,
@@ -73,26 +94,25 @@ h2 em {
   color: var(--olive);
 }
 
-h2 {
-  font-size: clamp(2.3rem, 3.8vw, 3.8rem);
-}
-
 .script {
   font-family: "Caveat", cursive;
-  color: var(--terracotta);
-  font-size: 1.5em;
+  font-size: 1.25em;
   font-weight: 500;
+  color: var(--terracotta);
 }
 
 .eyebrow {
   color: var(--terracotta);
   text-transform: uppercase;
-  letter-spacing: 0.17em;
-  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  font-size: 0.68rem;
   font-weight: 700;
 }
 
-/* NAVIGATION */
+
+/* ==========================================
+   04. HEADER & NAVIGATION
+========================================== */
 
 .site-header {
   position: relative;
@@ -100,48 +120,64 @@ h2 {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 25px 7%;
+  gap: 30px;
+  padding: 12px 7%;
   background: var(--cream);
   border-bottom: 1px solid var(--line);
 }
 
+/* Handwritten logo */
+
 .brand {
-  font-family: "DM Serif Display", serif;
-  font-size: 1.65rem;
-  letter-spacing: -0.03em;
-  color: var(--olive);
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+  line-height: 0;
 }
 
-.brand span {
-  color: var(--terracotta);
+.brand-logo {
+  display: block;
+  width: 120px;
+  height: auto;
+  object-fit: contain;
 }
+
+/* Navigation links */
 
 .site-header nav {
   display: flex;
-  gap: 35px;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 30px;
 }
 
 .site-header nav a {
   font-size: 0.85rem;
   font-weight: 500;
-  transition: color 0.2s;
+  transition: color 0.2s ease;
 }
 
 .site-header nav a:hover {
   color: var(--terracotta);
 }
 
-/* BUTTONS */
+
+/* ==========================================
+   05. BUTTONS & TEXT LINKS
+========================================== */
 
 .button {
   display: inline-flex;
   align-items: center;
-  gap: 30px;
-  padding: 15px 26px;
+  justify-content: center;
+  gap: 18px;
+  padding: 14px 25px;
   font-size: 0.85rem;
   font-weight: 600;
-  border-radius: 12px;
-  transition: 0.3s ease;
+  border-radius: 14px;
+  transition:
+    background 0.3s ease,
+    transform 0.3s ease;
 }
 
 .button-dark {
@@ -167,10 +203,11 @@ h2 {
 .text-link {
   display: inline-block;
   color: var(--olive);
+  font-size: 0.9rem;
   font-weight: 700;
   border-bottom: 1px solid var(--olive);
   padding-bottom: 5px;
-  transition: 0.2s;
+  transition: color 0.2s ease;
 }
 
 .text-link:hover {
@@ -178,7 +215,11 @@ h2 {
   border-color: var(--terracotta);
 }
 
-/* HERO */
+
+/* ==========================================
+   06. HOMEPAGE HERO
+========================================== */
+
 .hero {
   position: relative;
   display: grid;
@@ -193,29 +234,37 @@ h2 {
 .hero-content {
   position: relative;
   z-index: 2;
+  min-width: 0;
 }
+
+/* Main homepage heading */
 
 .hero h1 {
-  font-size: clamp(2.5rem, 3.5vw, 3.8rem);
+  font-size: clamp(2.4rem, 3.2vw, 3.4rem);
   line-height: 1.2;
   letter-spacing: -0.03em;
+  max-width: 650px;
   margin: 25px 0 15px;
-  max-width: 700px;
 }
 
+/* Description */
+
 .hero-description {
-  font-size: 1.1rem;
+  font-size: 0.95rem;
+  line-height: 1.7;
   color: var(--muted);
   max-width: 490px;
   margin: 30px 0;
 }
 
+/* Handwritten note */
+
 .handwritten-note {
   position: relative;
   display: inline-block;
   font-family: "Caveat", cursive;
-  color: var(--terracotta);
   font-size: 1.5rem;
+  color: var(--terracotta);
   transform: rotate(-5deg);
   margin-left: 25%;
 }
@@ -229,21 +278,25 @@ h2 {
   transform: rotate(-3deg);
 }
 
+/* Organic artwork on right */
+
 .hero-art {
   display: flex;
   align-items: center;
   justify-content: center;
+  min-width: 0;
 }
 
 .organic-shape {
-  width: min(100%, 460px);
+  width: min(100%, 400px);
   aspect-ratio: 1;
   display: flex;
   align-items: center;
   justify-content: center;
   background: var(--ivory);
-  border-radius: 46% 54% 56% 44% /
-                 52% 44% 56% 48%;
+  border-radius:
+    46% 54% 56% 44% /
+    52% 44% 56% 48%;
   padding: 35px;
 }
 
@@ -252,44 +305,55 @@ h2 {
   border-radius: 50%;
 }
 
+/* Bottom hero details */
+
 .hero-bottom {
   position: absolute;
   left: 7%;
   right: 7%;
-  bottom: 35px;
+  bottom: 30px;
   display: flex;
   justify-content: space-between;
+  gap: 20px;
   color: var(--muted);
   font-size: 0.7rem;
   font-weight: 600;
   letter-spacing: 0.12em;
 }
 
-/* INTRO STRIP */
+
+/* ==========================================
+   07. GREEN INTRO STRIP
+========================================== */
 
 .intro-strip {
   background: var(--olive);
-  padding: 85px 15%;
+  padding: 65px 15%;
   text-align: center;
 }
 
 .intro-strip p {
   font-family: "DM Serif Display", serif;
-  color: var(--cream);
-  font-size: clamp(1.7rem, 3.2vw, 3rem);
+  font-size: clamp(1.4rem, 2.2vw, 2.2rem);
   line-height: 1.5;
-  margin: 0;
+  color: var(--cream);
+  max-width: 900px;
+  margin: 0 auto;
 }
 
 .intro-strip .script {
   color: #E6B1A4;
+  font-size: 1.25em;
   white-space: nowrap;
 }
 
-/* GENERAL SECTIONS */
+
+/* ==========================================
+   08. GENERAL SECTIONS
+========================================== */
 
 .section {
-  padding: 110px 7%;
+  padding: 80px 7%;
   scroll-margin-top: 30px;
 }
 
@@ -298,23 +362,24 @@ h2 {
   align-items: end;
   justify-content: space-between;
   gap: 40px;
-  margin-bottom: 55px;
+  margin-bottom: 35px;
 }
 
 .section-heading h2 {
-  margin-bottom: 0;
+  font-size: clamp(2rem, 3vw, 3.2rem);
+  margin: 0;
 }
 
 .section-description {
-  max-width: 300px;
+  max-width: 350px;
   color: var(--muted);
   font-size: 0.95rem;
 }
 
 
-/* ==========================
-   SELECTED WORK PORTFOLIO
-========================== */
+/* ==========================================
+   09. SELECTED WORK PORTFOLIO
+========================================== */
 
 .work-section {
   background: var(--cream);
@@ -327,7 +392,7 @@ h2 {
 }
 
 .work-section .section-heading {
-  margin-bottom: 70px;
+  margin-bottom: 60px;
 }
 
 .work-section .section-heading h2 {
@@ -338,18 +403,25 @@ h2 {
 .work-intro {
   font-size: 0.95rem;
   line-height: 1.7;
+  color: var(--muted);
   max-width: 520px;
-  color: #777a70;
 }
 
-/* CATEGORY SECTIONS */
+
+/* ==========================================
+   10. PORTFOLIO CATEGORIES
+========================================== */
 
 .portfolio-category {
-  margin-bottom: 90px;
+  margin-bottom: 100px;
+}
+
+.portfolio-category:last-child {
+  margin-bottom: 0;
 }
 
 .portfolio-category + .portfolio-category {
-  border-top: 1px solid #dddcd4;
+  border-top: 1px solid var(--line);
   padding-top: 65px;
 }
 
@@ -358,8 +430,8 @@ h2 {
   font-size: 0.7rem;
   letter-spacing: 0.15em;
   text-transform: uppercase;
-  color: #b47e74;
-  font-weight: 600;
+  color: var(--terracotta);
+  font-weight: 700;
   margin-bottom: 15px;
 }
 
@@ -368,49 +440,86 @@ h2 {
 }
 
 .portfolio-category-heading h3 {
-  font-family: Georgia, serif;
+  font-family: "DM Serif Display", serif;
   font-size: clamp(1.6rem, 2.5vw, 2.4rem);
+  font-weight: 400;
   line-height: 1.2;
-  color: #30372f;
+  color: var(--charcoal);
   margin: 0 0 12px;
 }
 
 .portfolio-category-heading p {
   font-size: 0.95rem;
   line-height: 1.7;
-  color: #777a70;
+  color: var(--muted);
   max-width: 620px;
 }
 
-/* IMAGE GALLERY */
 
+/* ==========================================
+   11. PORTFOLIO IMAGE GALLERY
+========================================== */
 
-/* CLEANER PORTFOLIO IMAGES */
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 35px 25px;
+  align-items: start;
+}
 
 .portfolio-item {
   min-width: 0;
 }
 
-
-/* LOGO GALLERY - NATURAL IMAGE SIZES */
-
 .portfolio-item img {
   display: block;
   width: 100%;
-  height: auto;
-  max-height: 380px;
+  height: 300px;
   object-fit: contain;
-  padding: 0;
-  background: transparent;
+  object-position: center;
+  background: var(--ivory);
+  padding: 10px;
   border-radius: 16px;
+  transition: transform 0.3s ease;
 }
 
 .portfolio-item img:hover {
   transform: translateY(-4px);
 }
 
+.portfolio-item p {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--charcoal);
+  margin: 12px 0 6px;
+}
 
-/* WEBSITE BUTTON */
+
+/* ==========================================
+   12. LOGO GALLERY
+========================================== */
+
+/*
+  Optional:
+  Add class="logo-gallery" to the portfolio-grid
+  containing your logo projects.
+
+  This removes the beige image backgrounds
+  and lets logos keep their proportions.
+*/
+
+.logo-gallery .portfolio-item img {
+  height: 300px;
+  padding: 0;
+  background: transparent;
+  object-fit: contain;
+  border-radius: 16px;
+}
+
+
+/* ==========================================
+   13. PORTFOLIO LINKS & BUTTONS
+========================================== */
 
 .portfolio-button {
   display: inline-flex;
@@ -418,68 +527,40 @@ h2 {
   gap: 12px;
   margin-top: 35px;
   padding: 14px 25px;
-  background: #4e6345;
-  color: #fff;
-  text-decoration: none;
+  background: var(--olive);
+  color: white;
   font-size: 0.9rem;
   font-weight: 600;
   border-radius: 14px;
-  transition: background 0.2s ease;
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
 }
 
 .portfolio-button:hover {
-  background: #354831;
+  background: var(--olive-dark);
+  transform: translateY(-2px);
 }
-
-/* SMALL LINKS UNDER LOGOS */
 
 .portfolio-text-link {
   display: inline-block;
   margin-top: 8px;
   font-size: 0.85rem;
-  color: #4e6345;
+  color: var(--olive);
   text-decoration: none;
-  border-bottom: 1px solid #4e6345;
+  border-bottom: 1px solid var(--olive);
   padding-bottom: 3px;
 }
 
 .portfolio-text-link:hover {
-  color: #b47e74;
-  border-color: #b47e74;
-}
-
-/* MOBILE */
-
-@media (max-width: 700px) {
-
-  .work-section {
-    padding: 60px 6%;
-  }
-
-  .work-section .section-heading {
-    margin-bottom: 45px;
-  }
-
-  .portfolio-category {
-    margin-bottom: 65px;
-  }
-
-  .portfolio-grid {
-    grid-template-columns: 1fr;
-    gap: 28px;
-  }
-
-  .portfolio-item img {
-    height: 280px;
-  }
-
-  .portfolio-category + .portfolio-category {
-    padding-top: 45px;
-  }
+  color: var(--terracotta);
+  border-color: var(--terracotta);
 }
 
 
-/* SERVICES */
+/* ==========================================
+   14. CREATIVE SERVICES
+========================================== */
 
 .services-section {
   background: var(--ivory);
@@ -493,7 +574,7 @@ h2 {
 
 .service {
   background: var(--cream);
-  padding: 45px;
+  padding: 40px;
   border: 1px solid var(--line);
 }
 
@@ -506,13 +587,16 @@ h2 {
 
 .service h3 {
   font-family: "DM Serif Display", serif;
-  font-size: 2.3rem;
+  font-size: 1.7rem;
   font-weight: 400;
+  line-height: 1.3;
   margin: 20px 0;
 }
 
 .service p {
+  font-size: 0.9rem;
   color: var(--muted);
+  line-height: 1.7;
 }
 
 .service ul {
@@ -522,17 +606,13 @@ h2 {
 }
 
 .service li {
-  padding: 11px 0;
-  border-bottom: 1px solid var(--line);
-  font-size: 0.9rem;
-}
-
-.service li {
   padding: 14px 0;
   border-bottom: 1px solid var(--line);
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   list-style: none;
 }
+
+/* No arrows beside service items */
 
 .service li::before {
   content: none;
@@ -542,38 +622,48 @@ h2 {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 25px;
   margin-top: 60px;
 }
 
 .services-footer .script {
-  font-size: 2rem;
+  font-size: 1.8rem;
 }
 
-/* ABOUT */
+
+/* ==========================================
+   15. ABOUT ME SECTION
+========================================== */
 
 .about-layout {
   display: grid;
-  grid-template-columns: 350px 1fr;
-  gap: 80px;
+  grid-template-columns: 250px minmax(0, 1fr);
   align-items: center;
-  max-width: 1150px;
+  gap: 60px;
+  max-width: 1050px;
   margin: 0 auto;
 }
 
+/* Smaller oval photo */
+
 .about-image {
   position: relative;
-  width: 100%;
-  max-width: 350px;
+  width: 250px;
+  max-width: 100%;
+  margin: 0;
 }
 
 .about-image img {
+  display: block;
   width: 100%;
-  height: 440px;
+  height: 320px;
   object-fit: cover;
   object-position: center;
   border-radius: 50% / 40%;
   background: var(--ivory);
 }
+
+/* Handwritten note near photo */
 
 .image-note {
   position: absolute;
@@ -581,20 +671,28 @@ h2 {
   right: -15px;
   color: var(--terracotta);
   font-family: "Caveat", cursive;
-  font-size: 2rem;
+  font-size: 1.5rem;
   transform: rotate(-7deg);
 }
 
+/* About text */
+
 .about-content {
+  width: 100%;
+  min-width: 0;
   max-width: 650px;
 }
 
 .about-content h2 {
-  margin: 20px 0 30px;
+  font-size: clamp(2rem, 3vw, 2.8rem);
+  line-height: 1.2;
+  margin: 20px 0 25px;
 }
 
 .about-content p:not(.eyebrow) {
   color: var(--muted);
+  font-size: 0.95rem;
+  line-height: 1.8;
   margin-bottom: 20px;
 }
 
@@ -602,13 +700,16 @@ h2 {
   margin-top: 20px;
 }
 
-/* CONTACT */
+
+/* ==========================================
+   16. CONTACT SECTION
+========================================== */
 
 .contact-section {
   background: var(--olive);
   color: var(--cream);
   text-align: center;
-  padding: 120px 7%;
+  padding: 85px 7%;
 }
 
 .contact-section .eyebrow {
@@ -616,8 +717,8 @@ h2 {
 }
 
 .contact-section h2 {
-  font-size: clamp(2.5rem, 4.5vw, 4.5rem);
-  line-height: 1.2;
+  font-size: clamp(2.2rem, 3.5vw, 3.8rem);
+  line-height: 1.25;
   margin: 25px 0;
 }
 
@@ -626,25 +727,30 @@ h2 {
 }
 
 .contact-section > p:not(.eyebrow) {
-  max-width: 300px;
+  max-width: 480px;
   margin: 0 auto 30px;
   color: #E1E7DD;
+  font-size: 0.95rem;
+  line-height: 1.8;
 }
 
 .contact-handwritten {
   display: block;
   font-family: "Caveat", cursive;
-  font-size: 2rem;
+  font-size: 1.5rem;
   color: #E6B1A4;
   margin-top: 25px;
   transform: rotate(-4deg);
 }
 
-/* FOOTER */
+
+/* ==========================================
+   17. FOOTER
+========================================== */
 
 .site-footer {
   background: var(--cream);
-  padding: 55px 7% 25px;
+  padding: 45px 7% 25px;
 }
 
 .footer-top {
@@ -652,13 +758,22 @@ h2 {
   justify-content: space-between;
   align-items: center;
   gap: 30px;
-  padding-bottom: 45px;
+  padding-bottom: 35px;
 }
 
 .footer-brand {
-  font-family: "DM Serif Display", serif;
-  color: var(--olive);
-  font-size: 2rem;
+  display: inline-flex;
+  align-items: center;
+  line-height: 0;
+}
+
+/* Handwritten footer logo */
+
+.footer-logo {
+  display: block;
+  width: 150px;
+  height: auto;
+  object-fit: contain;
 }
 
 .footer-links {
@@ -686,278 +801,94 @@ h2 {
 }
 
 
-/* HEADER LOGO */
-.brand-logo {
-  display: block;
-  width: 150px;
-  height: auto;
-  object-fit: contain;
-}
-
-/* FOOTER LOGO */
-.footer-logo {
-  display: block;
-  width: 150px;
-  height: auto;
-  object-fit: contain;
-}
-/* ==================================
-   REFINED TYPOGRAPHY & SPACING
-   INYART DESIGNS
-================================== */
-
-/* GENERAL SECTION HEADINGS */
-
-h2 {
-  font-size: clamp(2rem, 3vw, 3.2rem);
-  line-height: 1.2;
-}
-
-/* HOMEPAGE MAIN HEADING */
-
-.hero h1 {
-  font-size: clamp(2.4rem, 3.2vw, 3.4rem);
-  line-height: 1.2;
-  max-width: 650px;
-}
-
-/* HOMEPAGE HANDWRITTEN ACCENT */
-
-.handwritten-note {
-  font-size: 1.5rem;
-}
-
-/* HOMEPAGE DESCRIPTION */
-
-.hero-description {
-  font-size: 0.95rem;
-  line-height: 1.7;
-}
-
-/* GREEN INTRO SECTION */
-
-.intro-strip {
-  padding: 65px 15%;
-}
-
-.intro-strip p {
-  font-size: clamp(1.4rem, 2.2vw, 2.2rem);
-  line-height: 1.5;
-  max-width: 900px;
-  margin: 0 auto;
-}
-
-.intro-strip .script {
-  font-size: 1.25em;
-}
-
-/* SELECTED WORK & SERVICES */
-
-.section-heading h2 {
-  font-size: clamp(2rem, 3vw, 3.2rem);
-}
-
-.section-heading {
-  margin-bottom: 35px;
-}
-
-/* SERVICE CARD HEADINGS */
-
-.service h3 {
-  font-size: 1.7rem;
-}
-
-.service p {
-  font-size: 0.9rem;
-}
-
-.service li {
-  font-size: 0.85rem;
-}
-
-/* ABOUT SECTION */
-
-.about-content h2 {
-  font-size: clamp(2rem, 3vw, 3.2rem);
-}
-
-.about-content p:not(.eyebrow) {
-  font-size: 0.95rem;
-}
-
-/* CONTACT SECTION */
-
-.contact-section h2 {
-  font-size: clamp(2.2rem, 3.5vw, 3.8rem);
-  line-height: 1.25;
-}
-
-.contact-section > p:not(.eyebrow) {
-  font-size: 0.95rem;
-}
-
-.contact-handwritten {
-  font-size: 1.5rem;
-}
-
-/* SMALL SECTION LABELS */
-
-.eyebrow {
-  font-size: 0.68rem;
-  letter-spacing: 0.14em;
-}
-
-/* LESS EMPTY SPACE BETWEEN SECTIONS */
-
-.section {
-  padding-top: 80px;
-  padding-bottom: 80px;
-}
-
-.contact-section {
-  padding-top: 85px;
-  padding-bottom: 85px;
-}
-
-
-/* PORTFOLIO - TWO COLUMN GALLERY */
-
-.portfolio-grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 30px;
-  align-items: start;
-}
-
-.portfolio-item {
-  min-width: 0;
-}
-
-.portfolio-item img {
-  display: block;
-  width: 100%;
-  height: 300px;
-  object-fit: contain;
-  object-position: center;
-  background: #f0ede6;
-  padding: 10px;
-  box-sizing: border-box;
-  border-radius: 16px;
-}
-
-.portfolio-item p {
-  margin-top: 12px;
-  font-size: 0.9rem;
-}
-
-/* MOBILE */
-
-@media (max-width: 700px) {
-  .portfolio-grid {
-    grid-template-columns: 1fr;
-    gap: 25px;
-  }
-
-  .portfolio-item img {
-    height: 260px;
-  }
-}
-
-/* MOBILE ADJUSTMENTS */
-
-@media (max-width: 650px) {
-
-  .hero h1 {
-    font-size: clamp(2rem, 7vw, 2.5rem);
-  }
-
-  h2,
-  .section-heading h2,
-  .about-content h2 {
-    font-size: clamp(1.9rem, 7vw, 2.4rem);
-  }
-
-  .intro-strip p {
-    font-size: 1.45rem;
-  }
-
-  .contact-section h2 {
-    font-size: clamp(2rem, 7vw, 2.6rem);
-  }
-
-  .section {
-    padding-top: 60px;
-    padding-bottom: 60px;
-  }
-
-/* MOBILE */
-@media (max-width: 650px) {
-  .brand-logo {
-    width: 100px;
-  }
-
-  .footer-logo {
-    width: 130px;
-  }
-}
-
-/* RESPONSIVE */
+/* ==========================================
+   18. TABLET RESPONSIVE
+========================================== */
 
 @media (max-width: 900px) {
 
   .hero {
     grid-template-columns: 1fr;
     min-height: auto;
-    padding-top: 85px;
+    padding-top: 70px;
     gap: 35px;
   }
 
   .hero-art {
-    max-width: 380px;
+    max-width: 340px;
     margin: 0 auto;
   }
 
-  .about-layout {
-    gap: 45px;
+  .services-grid {
+    gap: 25px;
   }
 
   .service {
     padding: 30px;
   }
+
+  .about-layout {
+    gap: 40px;
+  }
+
+  .section-heading {
+    gap: 25px;
+  }
+
 }
 
-@media (max-width: 650px) {
+
+/* ==========================================
+   19. MOBILE RESPONSIVE
+========================================== */
+
+@media (max-width: 700px) {
+
+  /* Header */
 
   .site-header {
     flex-direction: column;
     gap: 15px;
-    padding: 20px 5%;
+    padding: 15px 6%;
+  }
+
+  .brand-logo {
+    width: 100px;
   }
 
   .site-header nav {
-    gap: 18px;
     justify-content: center;
-    flex-wrap: wrap;
+    gap: 18px;
   }
 
   .site-header nav a {
     font-size: 0.8rem;
   }
 
+  /* Hero */
+
   .hero {
-    padding: 70px 6% 100px;
+    grid-template-columns: 1fr;
+    padding: 60px 6% 90px;
+    gap: 30px;
   }
 
   .hero h1 {
-    font-size: clamp(2.8rem, 11vw, 4.5rem);
+    font-size: clamp(2rem, 7vw, 2.5rem);
+    max-width: 100%;
   }
 
   .hero-description {
-    font-size: 1rem;
+    font-size: 0.95rem;
   }
 
   .handwritten-note {
+    font-size: 1.4rem;
     margin-left: 15%;
+  }
+
+  .hero-art {
+    max-width: 280px;
   }
 
   .hero-bottom {
@@ -970,12 +901,24 @@ h2 {
     display: none;
   }
 
+  /* Green intro */
+
   .intro-strip {
-    padding: 65px 8%;
+    padding: 60px 8%;
   }
 
+  .intro-strip p {
+    font-size: 1.45rem;
+  }
+
+  .intro-strip .script {
+    white-space: normal;
+  }
+
+  /* General sections */
+
   .section {
-    padding: 75px 6%;
+    padding: 60px 6%;
   }
 
   .section-heading {
@@ -983,133 +926,132 @@ h2 {
     margin-bottom: 35px;
   }
 
+  .section-heading h2 {
+    font-size: clamp(1.9rem, 7vw, 2.4rem);
+  }
+
   .section-description {
+    max-width: 100%;
     margin-top: 20px;
   }
 
-  .portfolio-grid,
-  .services-grid,
-  .about-layout {
-    grid-template-columns: 1fr;
+  /* Portfolio */
+
+  .work-section {
+    padding: 60px 6%;
+  }
+
+  .work-section .section-heading {
+    margin-bottom: 45px;
+  }
+
+  .portfolio-category {
+    margin-bottom: 65px;
+  }
+
+  .portfolio-category + .portfolio-category {
+    padding-top: 45px;
   }
 
   .portfolio-grid {
-    gap: 45px;
+    grid-template-columns: 1fr;
+    gap: 28px;
   }
 
-  .project:nth-child(even) {
-    transform: none;
+  .portfolio-item img,
+  .logo-gallery .portfolio-item img {
+    height: 260px;
   }
 
-  .portfolio-note {
-    margin: 45px 0 0;
-    text-align: center;
+  .portfolio-category-heading h3 {
+    font-size: 1.8rem;
+  }
+
+  /* Services */
+
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .service {
+    padding: 30px;
+  }
+
+  .service h3 {
+    font-size: 1.6rem;
   }
 
   .services-footer {
     flex-direction: column;
     align-items: flex-start;
     gap: 15px;
+    margin-top: 40px;
   }
+
+  /* About */
 
   .about-layout {
-    gap: 65px;
+    grid-template-columns: 1fr;
+    gap: 35px;
   }
 
-  .image-note {
-    right: 5px;
+  .about-image {
+    width: 220px;
+    margin: 0 auto;
   }
+
+  .about-image img {
+    height: 280px;
+  }
+
+  .about-content {
+    max-width: 100%;
+  }
+
+  .about-content h2 {
+    font-size: clamp(1.9rem, 7vw, 2.4rem);
+  }
+
+  /* Contact */
 
   .contact-section {
-    padding: 90px 6%;
+    padding: 70px 6%;
   }
+
+  .contact-section h2 {
+    font-size: clamp(2rem, 7vw, 2.6rem);
+  }
+
+  /* Footer */
 
   .footer-top,
   .footer-bottom {
     flex-direction: column;
     align-items: flex-start;
   }
+
+  .footer-logo {
+    width: 130px;
+  }
+
 }
 
+
+/* ==========================================
+   20. ACCESSIBILITY
+========================================== */
+
 @media (prefers-reduced-motion: reduce) {
+
   html {
     scroll-behavior: auto;
   }
 
   .button,
-  .project-image img {
+  .portfolio-button,
+  .portfolio-item img {
     transition: none;
   }
+
 }
 
-@media (max-width: 800px) {
-  .about-layout {
-    grid-template-columns: 300px 1fr;
-    gap: 55px;
-  }
-
-  .about-image {
-    max-width: 300px;
-    margin: 0 auto;
-  }
-
-  .about-image img {
-    height: 380px;
-  }
-
-  .about-content {
-    max-width: 100%;
-  }
-   
-/* FIX ABOUT ME LAYOUT */
-
-.about-layout {
-  display: grid;
-  grid-template-columns: 320px minmax(0, 1fr);
-  align-items: center;
-  gap: 60px;
-  max-width: 1150px;
-  margin: 0 auto;
-}
-
-.about-image {
-  width: 100%;
-  max-width: 320px;
-}
-
-.about-image img {
-  width: 100%;
-  height: 300px;
-  object-fit: cover;
-  object-position: center;
-  border-radius: 50% / 40%;
-}
-
-.about-content {
-  width: 100%;
-  min-width: 0;
-  max-width: 650px;
-}
-
-.about-content h2 {
-  font-size: clamp(2rem, 3vw, 3.5rem);
-  line-height: 1.15;
-}
-
-/* Stack only on smaller screens */
-
-@media (max-width: 700px) {
-  .about-layout {
-    grid-template-columns: 1fr;
-    gap: 45px;
-  }
-
-  .about-image {
-    max-width: 250px;
-    margin: 0 auto;
-  }
-
-  .about-image img {
-    height: 350px;
-  }
-}
