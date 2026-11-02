@@ -750,33 +750,47 @@ h2 em {
    16. CONTACT SECTION
 ========================================== */
 
+/* Contact / Call-to-Action Section */
 .contact-section {
-  background: var(--terracotta);
-  color: var(--cream);
-  text-align: center;
-  padding: 85px 7%;
+    background-color: #B9786B;
+    width: 100vw;
+    max-width: none;
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
+    padding: 100px 30px;
+    box-sizing: border-box;
+    border-radius: 0;
+    text-align: center;
 }
 
-.contact-section .eyebrow {
-  color: #E1E7DD;
-}
-
+/* Heading */
 .contact-section h2 {
-  font-size: clamp(2.2rem, 3.5vw, 3.8rem);
-  line-height: 1.25;
-  margin: 25px 0;
+    color: #F8F5EF;
 }
 
-.contact-section h2 em {
-  color: #E6B1A4;
+/* Accent text */
+.contact-section h2 span {
+    color: #F0B5A7;
 }
 
-.contact-section > p:not(.eyebrow) {
-  max-width: 480px;
-  margin: 0 auto 30px;
-  color: #E1E7DD;
-  font-size: 0.95rem;
-  line-height: 1.8;
+/* Description */
+.contact-section p {
+    color: #F8F5EF;
+}
+
+/* Button */
+.contact-section a {
+    display: inline-block;
+    background-color: rgba(255, 255, 255, 0.12);
+    color: #F8F5EF;
+    padding: 16px 30px;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.contact-section a:hover {
+    background-color: rgba(255, 255, 255, 0.22);
 }
 
 .contact-handwritten {
