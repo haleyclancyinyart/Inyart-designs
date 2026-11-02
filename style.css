@@ -454,31 +454,28 @@ h2 em {
   min-width: 0;
 }
 
-/* Uniform rounded frame so all image formats flow together */
-.portfolio-media {
+/* Make the image container edge-to-edge */
+.portfolio-media,
+.portfolio-item .portfolio-media {
   width: 100%;
-  height: 280px;
-  background-color: var(--ivory);
+  aspect-ratio: 1 / 1;      /* Perfectly square frame */
+  height: auto;             /* Replaces fixed height so it scales cleanly */
+  padding: 0;               /* Removes any inner space around images */
+  background: transparent;  /* Removes the tan border effect */
   border-radius: 18px;
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden;         /* Clips the image corners to the container */
 }
 
-.portfolio-media:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 10px 24px rgba(48, 55, 47, 0.08);
-}
-
-/* Default photo & poster rendering */
-.portfolio-media img {
+/* Make the image completely fill the rounded card */
+.portfolio-media img,
+.portfolio-item img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: cover;        /* Fills the box entirely edge-to-edge */
   object-position: center;
   border-radius: 18px;
+  padding: 0 !important;    /* Overrides any leftover padding */
+  background: none !important;
 }
 
 /* Keeps transparent/solid square logos from getting aggressively cropped */
@@ -531,6 +528,17 @@ h2 em {
 .portfolio-text-link:hover {
   color: var(--terracotta);
   border-color: var(--terracotta);
+}
+/* Keeps the button tightly hugging its text instead of stretching full-width */
+.portfolio-item .button,
+.portfolio-item .portfolio-button,
+.portfolio-item a.button-dark {
+  display: inline-flex;
+  align-self: flex-start;  /* Prevents flexbox from stretching it horizontally */
+  width: auto;             /* Hugs text content */
+  padding: 0.65rem 1.25rem; /* Compact padding */
+  font-size: 0.85rem;
+  line-height: 1;
 }
 
 /* ==========================================
