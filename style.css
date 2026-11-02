@@ -1095,7 +1095,7 @@ h2 em {
     font-size: clamp(2rem, 7vw, 2.6rem);
   }
    /* Contact / Call-to-Action Section */
-.contact-cta {
+.contact-section {
     background-color: #B9786B;
     width: 100vw;
     max-width: none;
@@ -1108,22 +1108,22 @@ h2 em {
 }
 
 /* Heading */
-.contact-cta h2 {
+.contact-section h2 {
     color: #F8F5EF;
 }
 
 /* Accent text */
-.contact-cta h2 span {
+.contact-section h2 span {
     color: #F0B5A7;
 }
 
 /* Description */
-.contact-cta p {
+.contact-section p {
     color: #F8F5EF;
 }
 
 /* Button */
-.contact-cta a {
+.contact-section a {
     display: inline-block;
     background-color: rgba(170, 109, 89, 1);
     color: #F8F5EF;
@@ -1133,7 +1133,7 @@ h2 em {
     transition: background-color 0.3s ease;
 }
 
-.contact-cta a:hover {
+.contact-section a:hover {
     background-color: rgba(170, 109, 89, 1);
 }
 
