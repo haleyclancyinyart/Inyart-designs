@@ -346,7 +346,7 @@ h2 em {
 
 
 /* ==========================================
-   08. GENERAL SECTIONS
+   08. GENERAL SECTIONS & HEADINGS
 ========================================== */
 
 .section {
@@ -354,251 +354,158 @@ h2 em {
   scroll-margin-top: 30px;
 }
 
-.section-heading {
-  display: flex;
-  align-items: end;
-  justify-content: space-between;
-  gap: 40px;
-  margin-bottom: 35px;
-}
-
-.section-heading h2 {
-  font-size: clamp(2rem, 3vw, 3.2rem);
-  margin: 0;
-}
-
-.section-description {
-  max-width: 350px;
-  color: var(--muted);
-  font-size: 0.95rem;
-}
-
-.section-heading {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    gap: 10px;
-    width: 100%;
-}
-
-.section-heading .script,
-.section-heading h2,
-.section-heading .work-intro {
-    margin: 0;
-    text-align: center;
-}
-.section-heading .work-intro {
-    max-width: 550px;
-}
-
-/* ==========================================
-   09. SELECTED WORK PORTFOLIO
-========================================== */
-
-/* FIX SELECTED WORK HEADING */
-
-.work-section .section-heading {
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  gap: 35px;
-  width: 100%;
+.work-container {
   max-width: 1200px;
-  margin: 0 auto 50px;
+  margin: 0 auto;
 }
 
-.work-section .section-heading > * {
-  min-width: 0;
+/* Centered Main Section Headings (Selected Work) */
+.section-heading.centered-heading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin: 0 auto 70px auto;
+  max-width: 650px;
 }
 
-.work-section .section-heading h2 {
-  font-size: clamp(2rem, 3vw, 3rem);
+.section-heading.centered-heading h2 {
+  font-size: clamp(2.2rem, 3.5vw, 3.4rem);
+  margin-bottom: 12px;
 }
 
-.work-section .section-description {
-  max-width: 350px;
-  flex-shrink: 1;
-  overflow-wrap: break-word;
+.section-heading.centered-heading .work-intro {
+  font-size: 1.05rem;
+  color: var(--muted);
+  line-height: 1.6;
+  margin: 0 auto;
 }
 
-@media (max-width: 700px) {
-  .work-section .section-heading {
-    flex-direction: column;
-    gap: 15px;
-  }
-
-  .work-section .section-description {
-    max-width: 100%;
-  }
+/* Left-aligned General Section Headings (Services, etc.) */
+.section-heading {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 30px;
+  margin-bottom: 45px;
 }
+
 
 /* ==========================================
-   10. PORTFOLIO CATEGORIES
+   09. PORTFOLIO CATEGORIES & DIVIDERS
 ========================================== */
 
 .portfolio-category {
-  margin-bottom: 100px;
+  padding-bottom: 75px;
+  margin-bottom: 75px;
+  border-bottom: 1px solid var(--line); /* Standardized divider line for all */
 }
 
+/* Removes divider and bottom margin from the last portfolio category */
 .portfolio-category:last-child {
+  border-bottom: none;
   margin-bottom: 0;
-}
-
-.portfolio-category + .portfolio-category {
-  border-top: 1px solid var(--line);
-  padding-top: 65px;
-}
-
-.category-number {
-  display: block;
-  font-size: 0.7rem;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  color: var(--terracotta);
-  font-weight: 700;
-  margin-bottom: 15px;
+  padding-bottom: 0;
 }
 
 .portfolio-category-heading {
   margin-bottom: 35px;
 }
 
+.portfolio-category-heading .script {
+  display: block;
+  font-size: 1.3rem;
+  margin-bottom: 4px;
+}
+
 .portfolio-category-heading h3 {
   font-family: "DM Serif Display", serif;
-  font-size: clamp(1.6rem, 2.5vw, 2.4rem);
+  font-size: clamp(1.6rem, 2.4vw, 2.2rem);
   font-weight: 400;
-  line-height: 1.2;
   color: var(--charcoal);
-  margin: 0 0 12px;
+  margin: 0 0 10px;
 }
 
 .portfolio-category-heading p {
   font-size: 0.95rem;
-  line-height: 1.7;
   color: var(--muted);
-  max-width: 620px;
+  max-width: 580px;
+  margin: 0;
 }
 
 
 /* ==========================================
-   11. PORTFOLIO IMAGE GALLERY
+   10. PORTFOLIO GRID & UNIFIED CARDS
 ========================================== */
 
 .portfolio-grid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 35px 25px;
-  align-items: start;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 32px 28px;
 }
 
 .portfolio-item {
+  display: flex;
+  flex-direction: column;
   min-width: 0;
 }
 
-.portfolio-item img {
-  display: block;
+/* Uniform rounded frame so all image formats flow together */
+.portfolio-media {
   width: 100%;
-  height: 300px;
-  object-fit: contain;
-  object-position: center;
-  background: var(--ivory);
-  padding: 10px;
-  border-radius: 16px;
-  transition: transform 0.3s ease;
-}
-
-.portfolio-item img:hover {
-  transform: translateY(-4px);
-}
-
-.portfolio-item p {
-  font-size: 0.9rem;
-  font-weight: 500;
-  color: var(--charcoal);
-  margin: 12px 0 6px;
-}
-
-
-/* ==========================================
-   12. LOGO GALLERY
-========================================== */
-
-/* ROUNDED LOGO GALLERY IMAGES */
-
-.logo-gallery .portfolio-item {
-  min-width: 0;
-}
-
-.logo-gallery .portfolio-item img {
-  display: block;
-  width: 100%;
-  height: 300px;
-  object-fit: contain;
-  object-position: center;
-  border-radius: 20px;
-  background: transparent;
-  padding: 0;
-}
-
-/* Rounded frame around each logo */
-.logo-gallery .portfolio-item {
-  border-radius: 20px;
-}
-
-/* Mobile */
-@media (max-width: 700px) {
-  .logo-gallery .portfolio-item img {
-    height: 240px;
-  }
-}
-
-
-/* LOGO IMAGE FRAME */
-
-.logo-image-frame {
-  width: 100%;
-  height: 300px;
+  height: 280px;
+  background-color: var(--ivory);
+  border-radius: 18px;
   overflow: hidden;
-  border-radius: 20px;
-  background: #f3efe7;
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.logo-image-frame img {
+.portfolio-media:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 24px rgba(48, 55, 47, 0.08);
+}
+
+/* Default photo & poster rendering */
+.portfolio-media img {
   width: 100%;
   height: 100%;
-  object-fit: contain;
-  border-radius: 20px;
-  padding: 0;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 18px;
 }
 
-@media (max-width: 700px) {
-  .logo-image-frame {
-    height: 240px;
-  }
+/* Keeps transparent/solid square logos from getting aggressively cropped */
+.portfolio-media.contains-logo img {
+  object-fit: contain;
+  padding: 24px;
 }
+
+.portfolio-item p {
+  font-size: 0.92rem;
+  font-weight: 500;
+  color: var(--charcoal);
+  margin: 14px 0 4px;
+}
+
 
 /* ==========================================
-   13. PORTFOLIO LINKS & BUTTONS
+   11. PORTFOLIO LINKS & BUTTONS
 ========================================== */
 
 .portfolio-button {
   display: inline-flex;
   align-items: center;
-  gap: 12px;
   margin-top: 35px;
-  padding: 14px 25px;
+  padding: 12px 26px;
   background: var(--olive);
-  color: white;
+  color: var(--white);
   font-size: 0.9rem;
   font-weight: 600;
-  border-radius: 14px;
-  transition:
-    background 0.2s ease,
-    transform 0.2s ease;
+  border-radius: 999px;
+  transition: background 0.2s ease, transform 0.2s ease;
 }
 
 .portfolio-button:hover {
@@ -608,19 +515,19 @@ h2 em {
 
 .portfolio-text-link {
   display: inline-block;
-  margin-top: 8px;
+  align-self: flex-start;
+  margin-top: 4px;
   font-size: 0.85rem;
   color: var(--olive);
-  text-decoration: none;
   border-bottom: 1px solid var(--olive);
-  padding-bottom: 3px;
+  padding-bottom: 2px;
+  transition: color 0.2s ease, border-color 0.2s ease;
 }
 
 .portfolio-text-link:hover {
   color: var(--terracotta);
   border-color: var(--terracotta);
 }
-
 
 /* ==========================================
    14. CREATIVE SERVICES
