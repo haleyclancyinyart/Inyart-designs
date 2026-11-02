@@ -755,28 +755,6 @@ h2 em {
   opacity: 0.7;
 }
 
-
-/* ROUNDED CORNERS FOR ALL PORTFOLIO IMAGES */
-
-.portfolio-item {
-  overflow: hidden;
-  border-radius: 18px;
-}
-
-.portfolio-item img {
-  display: block;
-  width: 100%;
-  border-radius: 18px;
-  overflow: hidden;
-}
-
-/* Keep rounded corners on logo images too */
-.logo-gallery .portfolio-item,
-.logo-gallery .portfolio-item img {
-  border-radius: 18px;
-}
-
-
 /* ==========================================
    17. FOOTER
 ========================================== */
