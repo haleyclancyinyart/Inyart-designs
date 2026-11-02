@@ -1094,6 +1094,48 @@ h2 em {
   .contact-section h2 {
     font-size: clamp(2rem, 7vw, 2.6rem);
   }
+   /* Contact / Call-to-Action Section */
+.contact-cta {
+    background-color: #B9786B;
+    width: 100vw;
+    max-width: none;
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
+    padding: 100px 30px;
+    box-sizing: border-box;
+    border-radius: 0;
+    text-align: center;
+}
+
+/* Heading */
+.contact-cta h2 {
+    color: #F8F5EF;
+}
+
+/* Accent text */
+.contact-cta h2 span {
+    color: #F0B5A7;
+}
+
+/* Description */
+.contact-cta p {
+    color: #F8F5EF;
+}
+
+/* Button */
+.contact-cta a {
+    display: inline-block;
+    background-color: rgba(170, 109, 89, 1);
+    color: #F8F5EF;
+    padding: 16px 30px;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.contact-cta a:hover {
+    background-color: rgba(170, 109, 89, 1);
+}
 
   /* Footer */
 
