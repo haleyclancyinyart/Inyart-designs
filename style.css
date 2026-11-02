@@ -751,14 +751,14 @@ h2 em {
 ========================================== */
 
 .contact-section {
-  background: var(--olive);
+  background: var(--terracotta);
   color: var(--cream);
   text-align: center;
   padding: 85px 7%;
 }
 
 .contact-section .eyebrow {
-  color: #E6B1A4;
+  color: #E1E7DD;
 }
 
 .contact-section h2 {
