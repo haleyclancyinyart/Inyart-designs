@@ -451,44 +451,53 @@ h2 em {
 .portfolio-item {
   display: flex;
   flex-direction: column;
+  align-items: flex-start; /* Ensures all children (including buttons) only take their natural width */
   min-width: 0;
 }
 
-/* Make the image container edge-to-edge */
-.portfolio-media,
-.portfolio-item .portfolio-media {
+/* Image container frame */
+.portfolio-media {
   width: 100%;
-  aspect-ratio: 1 / 1;      /* Perfectly square frame */
-  height: auto;             /* Replaces fixed height so it scales cleanly */
-  padding: 0;               /* Removes any inner space around images */
-  background: transparent;  /* Removes the tan border effect */
+  aspect-ratio: 1 / 1;      /* Crisp, even square boxes */
   border-radius: 18px;
-  overflow: hidden;         /* Clips the image corners to the container */
+  overflow: hidden;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Make the image completely fill the rounded card */
-.portfolio-media img,
-.portfolio-item img {
+.portfolio-media:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 24px rgba(48, 55, 47, 0.08);
+}
+
+/* Images fill the box edge-to-edge with no awkward margins */
+.portfolio-media img {
   width: 100%;
   height: 100%;
-  object-fit: cover;        /* Fills the box entirely edge-to-edge */
+  object-fit: cover;
   object-position: center;
+  display: block;
   border-radius: 18px;
-  padding: 0 !important;    /* Overrides any leftover padding */
-  background: none !important;
 }
 
-/* Keeps transparent/solid square logos from getting aggressively cropped */
-.portfolio-media.contains-logo img {
+/* Clarity Bloom or any standalone graphic that needs a white card backing */
+.portfolio-media.white-bg {
+  background-color: #ffffff;
+}
+
+.portfolio-media.white-bg img {
   object-fit: contain;
-  padding: 24px;
+  padding: 30px;
 }
 
 .portfolio-item p {
   font-size: 0.92rem;
   font-weight: 500;
   color: var(--charcoal);
-  margin: 14px 0 4px;
+  margin: 14px 0 6px;
 }
 
 
@@ -496,15 +505,21 @@ h2 em {
    11. PORTFOLIO LINKS & BUTTONS
 ========================================== */
 
+/* Universal pill button style - hugs text cleanly */
 .portfolio-button {
   display: inline-flex;
   align-items: center;
-  margin-top: 35px;
-  padding: 12px 26px;
+  justify-content: center;
+  width: fit-content;
+  max-width: max-content;
+  align-self: flex-start;
+  margin-top: 10px;
+  padding: 0.65rem 1.35rem; /* Clean, compact padding sized to text */
   background: var(--olive);
-  color: var(--white);
-  font-size: 0.9rem;
+  color: var(--white) !important;
+  font-size: 0.85rem;
   font-weight: 600;
+  line-height: 1;           /* Resets baseline height */
   border-radius: 999px;
   transition: background 0.2s ease, transform 0.2s ease;
 }
@@ -514,31 +529,16 @@ h2 em {
   transform: translateY(-2px);
 }
 
-.portfolio-text-link {
-  display: inline-block;
-  align-self: flex-start;
-  margin-top: 4px;
-  font-size: 0.85rem;
-  color: var(--olive);
-  border-bottom: 1px solid var(--olive);
-  padding-bottom: 2px;
-  transition: color 0.2s ease, border-color 0.2s ease;
+/* Category footer action bar for multiple buttons */
+.category-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 35px;
 }
 
-.portfolio-text-link:hover {
-  color: var(--terracotta);
-  border-color: var(--terracotta);
-}
-/* Keeps the button tightly hugging its text instead of stretching full-width */
-.portfolio-item .button,
-.portfolio-item .portfolio-button,
-.portfolio-item a.button-dark {
-  display: inline-flex;
-  align-self: flex-start;  /* Prevents flexbox from stretching it horizontally */
-  width: auto;             /* Hugs text content */
-  padding: 0.65rem 1.25rem; /* Compact padding */
-  font-size: 0.85rem;
-  line-height: 1;
+.category-actions .portfolio-button {
+  margin-top: 0;
 }
 
 /* ==========================================
