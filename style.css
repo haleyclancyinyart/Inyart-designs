@@ -686,75 +686,55 @@ h2 em {
 
 
 /* ==========================================
-   16. CONTACT SECTION
+   16. CONTACT SECTION (GOOGLE FORM EMBED)
 ========================================== */
 
-/* Contact / Call-to-Action Section */
 .contact-section {
-    background-color: #B9786B;
-    width: 100vw;
-    max-width: none;
-    margin-left: calc(50% - 50vw);
-    margin-right: calc(50% - 50vw);
-    padding: 100px 30px;
-    box-sizing: border-box;
-    border-radius: 0;
-    text-align: center;
+  background-color: #B9786B;
+  width: 100vw;
+  max-width: none;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  padding: 90px 7%;
+  box-sizing: border-box;
+  text-align: center;
 }
 
-/* Heading */
+.contact-container {
+  max-width: 680px;
+  margin: 0 auto;
+}
+
 .contact-section h2 {
-    color: #F8F5EF;
+  color: #F8F5EF;
+  margin-bottom: 16px;
 }
 
-/* Accent text */
-.contact-section h2 span {
-    color: #97A88F;
+.contact-section h2 em {
+  color: var(--ivory);
+  font-style: italic;
 }
 
-/* Description */
-.contact-section p {
-    color: #F8F5EF;
+.contact-intro {
+  color: #F8F5EF;
+  font-size: 1rem;
+  max-width: 500px;
+  margin: 0 auto 40px;
+  opacity: 0.95;
 }
 
-/* Button */
-.contact-section a {
-    display: inline-block;
-    background-color: rgba(255, 255, 255, 0.12);
-    color: #F8F5EF;
-    padding: 16px 30px;
-    border-radius: 50px;
-    text-decoration: none;
-    transition: background-color 0.3s ease;
+.google-form-wrapper {
+  background-color: var(--cream);
+  border-radius: 20px;
+  padding: 20px 10px;
+  box-shadow: 0 12px 30px rgba(48, 55, 47, 0.12);
+  overflow: hidden;
 }
 
-.contact-section a:hover {
-    background-color: rgba(255, 255, 255, 0.22);
-}
-
-.contact-handwritten {
+.google-form-wrapper iframe {
   display: block;
-  font-family: "Caveat", cursive;
-  font-size: 1.5rem;
-  color: #E6B1A4;
-  margin-top: 25px;
-  transform: rotate(-4deg);
-}
-
-/* ABOUT ME LINKS - SIDE BY SIDE */
-
-.about-links {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: flex-start;
-  flex-wrap: wrap;
-  gap: 32px;
-  margin-top: 32px;
-}
-
-.about-links a:hover {
-  opacity: 0.7;
+  width: 100%;
+  border: none;
 }
 
 /* ==========================================
